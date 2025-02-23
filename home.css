@@ -1,0 +1,677 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+.main_box{
+    position: relative;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100vh;
+    background-color: #1c1e22;
+}
+.main_box .sidebar_menu{
+    position: fixed;
+    top: 0px;
+    height: 100vh;
+    width: 280px;
+    left: -280px;
+    overflow: hidden;
+    transition: all 0.3s linear;
+    z-index: 1000000;
+    background-color: rgba(29,33,39,0.97);
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+}
+.sidebar_menu .logo{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+}
+.sidebar_menu .logo a{
+    font-size: 25px;
+    font-weight: 500;
+    position: absolute;
+    left: 50px;
+    line-height: 60px;
+    text-decoration: none;
+}
+.sidebar_menu .menu{
+    position: absolute;
+    top: 80px;
+    width:100%;
+}
+.sidebar_menu .menu li{
+    margin-top: 6px;
+    padding: 14px 20px;
+    color: #C4CFDE;
+    font-weight: 300;
+}
+.sidebar_menu .menu i{
+    font-size: 20px;
+    padding-right: 8px;
+    color: #ff014f;
+}
+.sidebar_menu .menu a{
+    font-size: 20px;
+    text-decoration: none;
+}
+.sidebar_menu .menu li:hover{
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+#check{
+    display: none;
+}
+.main_box .btn_one i{
+    font-size: 30px;
+    position: absolute;
+    left: 16px;
+    line-height: 60px;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.5s linear;  
+}
+.sidebar_menu .btn_two i{
+    font-size: 25px;
+    line-height: 60px;
+    position: absolute;
+    left: 240px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.5s linear;
+}
+.btn_one{
+    z-index: 100000;
+}
+.btn_one i:hover{
+    font-size: 29px;
+}
+.btn_two i:hover{
+    font-size: 24px;
+}
+#check:checked ~ .sidebar_menu{
+    left: 0;
+}
+#check:checked ~ .btn_one i{
+    opacity: 0;
+}
+#check:checked ~ .sidebar_menu .btn_two i{
+    opacity: 1;
+}
+#right{
+    border: 1px solid red;
+    width: 100%;
+    height: 700px;
+    position: absolute;
+    top:0px;
+    left: 0px;
+    z-index: -100000;
+}
+#div2,#div3,#div4,#div6,#div7,#div8,#div9{
+    display: none;
+    z-index: -100000;
+    width: 100%;
+    height: 100vh;
+    padding: 0%;
+    margin: 0%;
+    background-color: #212428;
+}
+#addCriminalDiv,#removeCriminalDiv,#addAdminDiv,#removeAdminDiv{
+    width: 100%;
+    height: 100vh;
+    background-color: #212428;
+}
+#addCriminalDiv form{
+    box-sizing: border-box;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    height: 520px;
+    background-color: #212428;
+    max-width: 600px;
+    position: relative;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+}
+#addAdminForm,#removeAdminForm{
+    box-sizing: border-box;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    background-color: #212428;
+    max-width: 600px;
+    position: relative;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+    height: 250px;
+}
+#removeAdminForm{
+    height: 170px;
+}
+#removeCriminalWithNameForm{
+    box-sizing: border-box;
+    background-color: #212428;
+    max-width: 600px;
+    position: relative;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    height: 170px;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+}
+#removeCriminalWithImageForm{
+    box-sizing: border-box;
+    background-color: #212428;
+    max-width: 600px;
+    position: relative;
+    left: 50%;
+    top: 130px;
+    transform: translateX(-50%);
+    height: 170px;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+}
+#addCriminalDiv form input,#removeCriminalWithNameForm input,#removeCriminalWithImageForm input,#addAdminForm input,#removeAdminForm input{
+    background-color: #191b1e;
+    border-radius: 6px;
+    transition-duration: 0.4s;
+    border: 2px solid #191b1e;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #C4CFDE;
+    letter-spacing: 1px;
+    box-shadow: 1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset, -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset;
+    width: 95%;
+    height: 45px;
+    margin: auto;
+    display: block;
+}
+#addCriminalDiv form input:focus,
+#removeCriminalWithNameForm input:focus,
+#removeCriminalWithImageForm input:focus,
+#searchForm input[type = "text"]:focus,
+#addAdminDiv form input:focus,
+#removeAdminDiv form input:focus{
+    border-color: #ff014f;
+    outline: #ff014f;
+}
+#addCriminalDiv form input[type = "file"],#removeCriminalWithImageForm input[type = "file"]{
+    border: none;
+    background: none;
+    outline: none;
+    width: fit-content;
+    display: inline;
+    box-shadow: none;
+}
+@media only screen and (max-width: 430px){
+    #addCriminalDiv form input[type = "file"],#removeCriminalWithImageForm input[type = "file"]{
+        width: 300px;
+        box-sizing: border-box;
+    }
+}
+#removeWithName,#removeWithImage{
+    font-weight: 500;
+    color: #C4CFDE;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    display: block;
+    width: 95%;
+    margin: auto;
+    position: relative;
+    top: 20px;
+    text-align: center;
+}
+#removeWithImage{
+    top: 100px;
+}
+#addCriminalDiv form input[type = "submit"],#removeCriminalWithNameForm input[type = "submit"]
+,#removeCriminalWithImageForm input[type = "submit"],#addAdminDiv form input[type = "submit"]
+,#removeAdminDiv form input[type = "submit"]{
+    width: 100px;
+    display: inline;
+    position: relative;
+    left: 15px;
+    top: 10px;
+    border-color: #ff014f;
+    color: #ff014f;
+}
+#addCriminalDiv form ::-webkit-file-upload-button,#removeCriminalWithImageForm ::-webkit-file-upload-button{
+    width: 150px;
+    height: 40px;
+    color: #ff014f;
+    border-radius: 4px;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    border: 2px solid #ff014f;
+    background-color: #1c1e22;
+}
+#addCriminalDiv p,#addAdminDiv p,#removeAdminDiv p{
+    font-weight: 600;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+#removeCriminalHeading{
+    font-weight: 600;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+#or{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    position: relative;
+    top: 70px;
+}
+#addCriminalDiv form label,#removeCriminalWithNameForm label,
+#removeCriminalWithImageForm label,#addAdminDiv form label,
+#removeAdminDiv form label{
+    width: 200px;
+    font-size: 15px;
+    color: #a0a8b3;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    text-align: left;
+    display: block;
+    position: relative;
+    left: 2.5%;
+    top: 10px;
+}
+@media only screen and (max-width: 800px){
+    #addCriminalDiv form,#removeCriminalDiv form,
+    #addAdminDiv form,#removeAdminDiv form{
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 800px){
+    #addCriminalDiv p,#removeCriminalHeading,#addAdminDiv p,#removeAdminDiv p{
+        font-size: 40px;
+    }
+}
+#addAdminDiv form{
+    height: 270px;
+}
+table{
+    border-collapse: collapse;
+    position: relative;
+    top: 70px;
+    width: 90vw !important;
+    margin: auto;
+}
+#adminsTable{
+    font-size: 10px;
+    width: 200px in !important;
+}
+table,td,th{
+    color: #C4CFDE;
+    text-align: center;
+    border: 2px solid #ff014f;
+    border-radius: 5px;
+}
+td{
+    height: 50px;
+}
+th{
+    font-weight: 500;
+    height: 70px;
+}
+.admin{
+    display: none;
+}
+#profileDiv{
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    border-radius: 5px;
+    border: 2px solid #ff014f;
+    max-width: 450px;
+    position: relative;
+    left: 50%;
+    top: 70px;
+    height: 500px;
+    transform: translateX(-50%);
+    background-color: #262a2e;
+}
+#profileHeading{
+    text-align: center;
+    font-size: 25px;
+    position: relative;
+    top: 10px;
+    color: #C4CFDE;
+}
+#profileImage{
+    position: relative;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+}
+#userName{
+    color: #C4CFDE;
+    position: relative;
+    top: 70px;
+    text-align: center;
+}
+#userEmail{
+    color: #C4CFDE;
+    position: relative;
+    top: 80px;
+    text-align: center;
+}
+#signOutButton2{
+    color: #C4CFDE;
+    border: 2px solid #ff014f;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    background: transparent;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
+    position: relative;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.sidebar_menu{
+    height: 100%;
+}
+li
+{
+    display: block;
+    cursor: pointer;
+}
+.loading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+}
+#box1,#box2,#box3,#box4{
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+}
+#microsoftLogo{
+    width: 120px;
+    height: 110px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+@keyframes loadingAnimation{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.3;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#box1{
+    animation-name: loadingAnimation;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    background-color: #f1511b;
+}
+#box2{
+    animation-name: loadingAnimation;
+    animation-duration: 1.6s;
+    animation-delay: 0.4s;
+    animation-iteration-count: infinite;
+    background-color: #80cc28;
+}
+#box3{
+    animation-name: loadingAnimation;
+    animation-duration: 1.6s;
+    animation-delay: 1.2s;
+    animation-iteration-count: infinite;
+    background-color: #00adef;
+}
+#box4{
+    animation-name: loadingAnimation;
+    animation-duration: 1.6s;
+    animation-delay: 0.8s;
+    animation-iteration-count: infinite;
+    background-color: #fbbc09;
+}
+@media only screen and (max-width: 450px){
+    #box1,#box2,#box3,#box4{
+        width: 30px;
+        height: 30px;
+        margin: 3px;
+    }
+    #microsoftLogo{
+        width: 80px;
+        height: 70px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+#pseudoNavBar{
+    background-color: #1d2127;
+    height: 10vh;
+    width: 100%;
+    margin: auto;
+}
+#searchForm{
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3vh;
+    height: 4vh;
+}
+#searchForm input[type = "text"]{
+    width: 240px;
+    height: 100%;
+    background-color: #191b1e;
+    border-radius: 6px;
+    transition-duration: 0.4s;
+    border: 2px solid #C4CFDE;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #C4CFDE;
+    letter-spacing: 1px;
+    box-shadow: 1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset, -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset;
+}
+#searchForm input[type = "submit"]{
+    width: 80px;
+    height: 100%;
+    border: 2px solid #ff014f;
+    color: #C4CFDE;
+    background-color: #1c1e22;
+    border-radius: 5px;
+}
+#resultsDiv{
+    border-radius: 10px;
+    box-shadow: rgb(28 30 34) 10px 10px 19px, rgb(38 42 46) -10px -10px 19px;
+    position: relative;
+    top: 2vh;
+    margin: auto;
+    width: 95%;
+    background-color: #1d2129;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: auto;
+}
+#displayAllCriminals{
+    position: absolute;
+    right: 1%;
+    top: 3vh;
+    height: 4vh;
+    width: 150px;
+    color: #ff014f;
+    border-radius: 4px;
+    font-weight: 500;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    border: 2px solid #ff014f;
+    background-color: #1c1e22;
+    z-index: 10000;
+}
+.resultsImage{
+    height: 200px;
+    width: 170px;
+    position: relative;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.resultsImageContainer{
+    border: 2px solid #C4CFDE;
+    height: 300px;
+    width: 250px;
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+}
+.resultsName{
+    text-align: center;
+    position: relative;
+    top: 15px;
+    color: #C4CFDE;
+}
+@media only screen and (max-width:600px){
+    #searchForm{
+        top: 30px;
+    }
+    #displayAllCriminals{
+        top: 10vh;
+        right: 0;
+    }
+}
+@media only screen and (max-width: 590px){
+    #resultsDiv{
+        justify-content: center;
+    }
+}
+.fa-times:before,#checkBtn{
+    color: #C4CFDE;
+}
+#searchForm input[type = "text"]{
+    background-color: #191b1e;
+    border-radius: 6px;
+    transition-duration: 0.4s;
+    border: 2px solid #191b1e;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #C4CFDE;
+    letter-spacing: 1px;
+    box-shadow: 1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset, -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset;
+}
+#div1{
+    z-index: -100000;
+    width: 100%;
+    height: 100vh;
+    padding: 0%;
+    margin: 0%;
+    background-color: #212428;
+}
+#startButtonsDiv{
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+}
+.startButtons{
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 220px;
+    height: 50px;
+    background-color: transparent;
+    border: 3px solid #ff014f;
+    color: #C4CFDE;
+    font-weight: 500;
+    transition-duration: 0.4s;
+    position: relative;
+    top: 0px;
+}
+.startButtons:hover{
+    color: white;
+    top: -10px;
+}
+@media only screen and (max-width: 550px){
+    .startButtons{
+        margin-bottom: 20px;
+    }
+    #startButtonsDiv{
+        align-items: center;
+        flex-direction: column;
+    }
+}
+#title{
+    font-weight: 600;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+#title2{
+    font-weight: 600;
+    color: #C4CFDE;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+#title2 span{
+    color: #ff014f;
+}
+#removeCriminalLink,#removeAdminLink{
+    position: absolute;
+    color: #ff014f;
+    right: 0vw;
+    bottom: 2vh;
+    font-size: 20px;
+}
+#specifier{
+    color: #C4CFDE;
+    font-size: 15px;
+    position: relative;
+    left: 50px;
+    top: 20px;
+    display: inline;
+}
+#div5{
+    background-color: #262a2e;
+    position: fixed;
+}
+.fa-bars{
+    display: none;
+}

@@ -1,0 +1,180 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0%;
+    padding: 0%;
+    overflow-y: scroll;
+}
+button,input[type = "submit"]{
+    cursor: pointer;
+}
+#signInForm,#signUpForm,#forgotPasswordForm{
+    box-sizing: border-box;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    height: 520px;
+    background-color: #212428;
+    max-width: 600px;
+    position: relative;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+}
+#signInForm label,#signUpForm label,#forgotPasswordForm label{
+    width: 200px;
+    font-size: 15px;
+    color: #a0a8b3;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    text-align: left;
+    display: block;
+    position: relative;
+    left: 2.5%;
+    top: 10px;
+}
+#signInForm input,#signUpForm input,#forgotPasswordForm input{
+    background-color: #191b1e;
+    border-radius: 6px;
+    transition-duration: 0.4s;
+    box-sizing: border-box;
+    border: 2px solid #191b1e;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #C4CFDE;
+    letter-spacing: 1px;
+    box-shadow: 1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset, -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset;
+    width: 90%;
+    height: 45px;
+    margin: auto;
+    display: block;
+}
+#signInForm input:focus,#signUpForm input:focus,#forgotPasswordForm input:focus{
+    border-color: #ff014f;
+    outline: #ff014f;
+}
+#signInForm input[type = "submit"],#signUpForm input[type = "submit"],#forgotPasswordForm input[type = "submit"]{
+    width: 100px;
+    display: inline;
+    position: relative;
+    left: 15px;
+    top: 10px;
+    border-color: #ff014f;
+    color: #ff014f;
+}
+#signInDiv,#signUpDiv,#forgotPasswordDiv{
+    width: 100%;
+    height: 100vh;
+    background-color: #212428;
+}
+#signInHeading,#signUpDiv p,#forgotPasswordDiv p{
+    font-weight: 600;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+@media only screen and (max-width: 800px){
+    #signInForm,#signUpForm,#forgotPasswordForm{
+        width: 90%;
+    }
+}
+#signInForm{
+    height: 400px;
+}
+#forgotPasswordForm{
+    height: 200px;
+}
+.notice{
+    text-align: center;
+    font-weight: 500;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: relative;
+    top: 40px;
+}
+#forgotPasswordButton{
+    width: 150px;
+    display: inline;
+    color: #ff014f;
+    border-radius: 6px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    height: 45px;
+    position: relative;
+    left: 5px;
+    top: 5px;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+}
+#newUserLink{
+    position: relative;
+    left: 15px;
+    top: 80px;
+    width: 120px;
+    color: #ff014f;
+}
+#closeButton{
+    position: absolute;
+    right: 2px;
+    color: #ff014f;
+    width: 45px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-shadow: 1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset, -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset;
+    height: 45px;
+    border: 2px solid #ff014f;
+    z-index: 1000;
+    background-color: transparent;
+    border-radius: 4px;
+}
+#signUpForm input[type = "file"]{
+    width: 250px;
+    position: relative;
+    display: inline;
+    background: none;
+    border: none;
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+#signUpForm ::-webkit-file-upload-button{
+    width: 100px;
+    height: 40px;
+    color: #ff014f;
+    border-radius: 4px;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    border: 2px solid #ff014f;
+    background-color: transparent;
+}
+@media only screen and (max-width: 400px){
+    #signInHeading,#signUpDiv p,#forgotPasswordDiv p{
+        font-size: 40px;
+    }
+}
+@media only screen and (max-width: 400px){
+    #signInForm input,#signUpForm input,#forgotPasswordForm input{
+        width: 90%;
+        box-sizing: border-box;
+    }
+}
+#forgotPasswordDiv{
+    display: none;
+}
+#forgotPasswordDiv{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+}
