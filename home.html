@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="/CSS FILES/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d3bccc2a64.js" crossorigin="anonymous"></script>
+   </head>
+<body>
+    <div class="main_box">
+        <input type="checkbox" id="check">
+        <div class="btn_one">
+            <label for="check" id = "checkBtn">
+                <i class = "fas fa-bars" id = "menuIcon"></i>
+            </label>
+        </div>
+        <div class="sidebar_menu">
+            <div class="btn_two">
+                <label for="check">
+                    <i class="fas fa-times"></i>
+                </label>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-robot"></i>
+                        <a>Get Started</a>
+                    </li>
+                    <li id = "manageCriminalButton" class = "admin">
+                        <i class="fas fa-sliders-h"></i>
+                        <a>Manage Criminals</a>
+                    </li>
+                    <li class = "admin">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <a>Find Criminals</a>
+                    </li>
+                    <li class = "admin">
+                        <i class="fa-solid fa-plus"></i>
+                        <a>Manage Admins</a>
+                    </li>
+                    <li class = "admin" id = "findAdminsButton">
+                        <i class="fas fa-question-circle"></i>
+                        <a>Find Admins</a>
+                    </li>
+                    <li id = "viewAddedAndRemovedButton" class = "admin">
+                        <i class="fa-solid fa-list-check"></i>
+                        <a>Criminals List</a>
+                    </li>
+                    <li id = "viewAddedAndRemovedButtonAdmin" class = "admin">
+                        <i class="fa-solid fa-list-ol"></i>
+                        <a>Admins List</a>
+                    </li>
+                    <li id = "profilebtn">
+                        <i class="fa-solid fa-address-card"></i>
+                        <a>Profile</a>
+                    </li>
+                    <li id = "logsButton" class = "admin">
+                        <i class="fa-solid fa-list-ol"></i>
+                        <a>Log</a>
+                    </li>
+                    <li id = "signOutButton">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <a>SignOut</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id = "div1">
+            <pre id = "specifier"><------Use to access extra features</pre>
+            <p id = "title">Face Recognition</p>
+            <p id = "title2">A project by <span>VANUM DANIEL PRIYAN</span></p>
+            <div id = "startButtonsDiv">
+                <button class = "startButtons">Use Image</button>
+                <button class = "startButtons">Use Video</button>
+                <button class = "startButtons">Use WebCam</button>
+            </div>
+        </div>
+        <div id = "div2">
+            <div id = "addCriminalDiv">
+                <p>Add a criminal</p>
+                <form autocomplete="off" id = "addCriminalForm">
+                    <label for = "displayName">Name</label>
+                    <br>
+                    <input type = "text" name = "displayName" required>
+                    <br>
+                    <label for = "wantedFor">Wanted for</label>
+                    <br>
+                    <input type = "text" name = "wantedFor" required>
+                    <br>
+                    <label id = "input1" for = "otherDetails">Other Details</label>
+                    <br>
+                    <input type = "text" name = "otherDetails" required>
+                    <br>
+                    <label for = "criminalImage">Image of criminal</label>
+                    <br>
+                    <input id = "criminalImageInput" accept="image/png, image/gif, image/jpeg" type = "file" name = "criminalImage" accept="image/jpeg, image/png, image/jpg" required>
+                    <br>
+                    <input type = "submit">
+                </form>
+                <a id = "removeCriminalLink" href="#removeCriminalDiv">Remove Criminal?</a> 
+            </div>
+            <div id = "removeCriminalDiv">
+                <p id = "removeCriminalHeading">Remove a criminal</p>
+                <p id = "removeWithName">Remove With Name</p>
+                <form autocomplete="off" id = "removeCriminalWithNameForm">
+                    <label for = "displayName">Name</label>
+                    <br>
+                    <input type = "text" name = "displayName" required>
+                    <br>
+                    <input type = "submit">
+                </form>
+                <p id = "or">OR</p>
+                <p autocomplete="off" id = "removeWithImage">Remove With Image</p>
+                <form id = "removeCriminalWithImageForm">
+                    <label for = "criminalImage">Image of criminal</label>
+                    <br>
+                    <input accept="image/png, image/gif, image/jpeg" id = "criminalImageInputForDelete" type = "file" name = "criminalImage" accept="image/jpeg, image/png, image/jpg" required>
+                    <br>
+                    <input id = "imagesubmit" type = "submit">
+                </form>
+            </div>
+        </div>
+        <div id = "div3">
+            <div id = "pseudoNavBar">
+                <form id = "searchForm">
+                    <input type = "text" name = "criminalName">
+                    <input type = "submit">
+                </form>
+                <button id = "displayAllCriminals">Show All Criminals</button>
+            </div>
+            <div id = "resultsDiv">
+
+            </div>
+        </div>
+        <div id = "div4">
+            <div id = "addAdminDiv">
+                <p>Add an Admin</p>
+                <form autocomplete="off" id = "addAdminForm">
+                    <label for = "displayName">Name</label>
+                    <br>
+                    <input type = "text" name = "displayName">
+                    <br>
+                    <label for = "email">Email</label>
+                    <br>
+                    <input type = "email" name = "email">
+                    <br>
+                    <input type = "submit">
+                </form>
+                <a id = "removeAdminLink" href="#removeAdminDiv">Remove Admin?</a> 
+            </div>
+            <div id = "removeAdminDiv">
+                <p>Remove an Admin</p>
+                <form autocomplete="off" id = "removeAdminForm">
+                    <label for = "email">Email</label>
+                    <br>
+                    <input type = "email" name = "email">
+                    <br>
+                    <input type = "submit">
+                </form>
+            </div>
+        </div>
+        <div id = "div5" class = "loading">
+            <div id = "microsoftLogo">
+                <div id = "box1"></div>
+                <div id = "box2"></div>
+                <div id = "box3"></div>
+                <div id = "box4"></div>
+            </div>
+        </div>
+        <div id = "div6">
+            <table id = "viewAddedAndRemovedTable">
+                <tr>
+                    <th>Name of the criminal</th>
+                    <th>Added by</th>
+                    <th>Date added</th>
+                    <th>Removed by</th>
+                    <th>Date removed</th>
+                </tr>
+            </table>
+        </div>
+        <div id = "div7">
+            <table id = "adminsTable">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Added by</th>
+                    <th>Date added</th>
+                    <th>Removed by</th>
+                    <th>Date removed</th>
+                </tr>
+            </table>
+        </div>
+        <div id = "div8">
+            <div id = "profileDiv">
+                <p id = "profileHeading">Profile</p>
+                <img id = "profileImage" width="200px" height = "200px" alt = "no profile picture">
+                <p id = "userName"></p>
+                <p id = "userEmail"></p>
+                <button id = "signOutButton2">Signout</button>
+            </div>
+        </div>
+        <div id = "div9">
+            <table id = "logsTable">
+                <tr>
+                    <th>Name of the criminal</th>
+                    <th>Found by</th>
+                    <th>Date found</th>
+                    <th>Found with</th>
+                    <th>Degree of similarity</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script defer src = "/JS FILES/face-api.js"></script>
+    <script defer type = "module" src = "/JS FILES/home.js"></script>
+</body>
+</html>

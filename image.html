@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS FILES/image.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Image</title>
+</head>
+<body>
+    <div id = "div5" class = "loading">
+        <div id = "microsoftLogo">
+            <div id = "box1"></div>
+            <div id = "box2"></div>
+            <div id = "box3"></div>
+            <div id = "box4"></div>
+        </div>
+    </div>
+    <div id = "navbar">
+        <p>Detect With Image</p>
+    </div>
+        <div id = "imageDiv">
+
+        </div>
+        <div id = "formDiv">
+            <form id = "imageUploadForm">
+                <select id = "imageSelect">
+                    <option value = "2">Tiny Face Detector</option>
+                    <option value = "1">SSD Mobilenet V1</option>
+                </select>
+                <br>
+                <input id = "imgUploadInput" accept="image/png, image/gif, image/jpeg" type = "file" name = "faceRecognitionImage">
+                <br>
+                <input type = "submit">
+            </form>
+            <button id = "landMarksButton">Add Landmarks</button>
+            <br>
+            <button id = "stopButton">Clear</button>
+            <br>
+            <button id = "exitbtn">Exit</button>
+        </div>
+        <script defer src="../JS FILES/face-api.js"></script>
+        <script type = "module" src="../JS FILES/image.js"></script>
+    </body>
+</html>

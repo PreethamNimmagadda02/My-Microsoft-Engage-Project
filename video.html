@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS FILES/video.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Video</title>
+</head>
+<body>
+    <div id = "div5" class = "loading">
+        <div id = "microsoftLogo">
+            <div id = "box1"></div>
+            <div id = "box2"></div>
+            <div id = "box3"></div>
+            <div id = "box4"></div>
+        </div>
+    </div>
+    <div id = "navbar">
+        <p>Detect With Video</p>
+        <button id = "toggle">Toggle</button>
+    </div>
+        <div id = "videoDiv">
+
+        </div>
+        <div id = "formDiv">
+            <form id = "videoUploadForm">
+                <select id = "videoSelect">
+                    <option value = "2">Tiny Face Detector</option>
+                    <option value = "1">SSD Mobilenet V1</option>
+                </select>
+                <br>
+                <input id = "videoUploadInput" accept="video/mp4,video/x-m4v,video/*" type = "file" name = "faceRecognitionVideo">
+                <br>
+                <input type = "submit">
+            </form>
+            <button id = "landMarksButton">Add Landmarks</button>
+            <br>
+            <button id = "playButton">Play</button>
+            <br>
+            <button id = "pauseButton">Pause</button>
+            <br>
+            <button id = "stopButton">Clear</button>
+            <br>
+            <button id = "exitbtn">Exit</button>
+            <br>
+            <p>Step-1: Submit the form</p>
+            <p>Step-2: Play</p>
+            <p>Step-3: Clear</p>
+            <p>Step-4: Repeat</p>
+        </div>
+        <script defer src="../JS FILES/face-api.js"></script>
+    <script type = "module" src="../JS FILES/video.js"></script>
+</body>
+</html>

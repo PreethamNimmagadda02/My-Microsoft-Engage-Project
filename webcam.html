@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../CSS FILES/webcam.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCam</title>
+</head>
+<body>
+    <div id = "div5" class = "loading">
+        <div id = "microsoftLogo">
+            <div id = "box1"></div>
+            <div id = "box2"></div>
+            <div id = "box3"></div>
+            <div id = "box4"></div>
+        </div>
+    </div>
+    <div id = "navbar">
+        <p>Detect With WebCam</p>
+        <button id = "toggle">Toggle</button>
+    </div>
+        <div id = "webCamDiv">
+            <video id = "webCamVideo" muted autoplay></video>
+        </div>
+        <div id = "formDiv">
+            <form id = "webCamUploadForm">
+                <select id = "webCamSelect">
+                    <option value = "2">Tiny Face Detector</option>
+                    <option value = "1">SSD Mobilenet V1</option>
+                </select>
+                <br>
+                <input type = "submit">
+            </form>
+            <button id = "landMarksButton">Add Landmarks</button>
+            <br>
+            <button id = "playButton">Play</button>
+            <br>
+            <button id = "pauseButton">Pause</button>
+            <br>
+            <button id = "exitButton">Exit</button>
+            <p>Step-1: Submit the form</p>
+            <p>Step-2: Play</p>
+            <p>Step-3: Clear</p>
+            <p>Step-4: Repeat</p>
+        </div>
+        <script defer src="../JS FILES/face-api.js"></script>
+        <script type = "module" src="../JS FILES/webcam.js"></script>
+    </body>
+</html>
